@@ -34,10 +34,10 @@ const LoginPage = () => {
                     </Col>
 
 
-                    {/* <label className="mx-auto my-4">
+                   <label className="mx-auto my-4">
                     <Link to="/admin/allproducts" style={{textDecoration:'none'}}>
                         <span style={{ cursor: "pointer" }} className="text-danger">
-                            الدخول ادمن
+                              الدخول ادمن
                         </span>
                     </Link>
 
@@ -46,7 +46,7 @@ const LoginPage = () => {
                             الدخول مستخدم
                         </span>
                     </Link>
-                </label> */}
+                </label>
                 </Row>
             </Container>
     )
