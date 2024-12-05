@@ -9,7 +9,7 @@ const AllBrandPage = () => {
    
   return (
     <div> 
-       <BrandContainer data={brand} loading={loading} />
+       <BrandContainer data={brand.data} loading={loading} />
             <Pagination pageCount={pageCount} onPress={getPage} />
     </div>
   )

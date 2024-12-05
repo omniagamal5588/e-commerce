@@ -7,7 +7,7 @@ const AllBrandHook = () => {
     const dispatch = useDispatch();
     //when first load
     useEffect(() => {
-        dispatch(getAllBrand(3));
+        dispatch(getAllBrand(5));
     }, [])
 
     //to get state from redux

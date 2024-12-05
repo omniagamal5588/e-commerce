@@ -16,12 +16,12 @@ const HomeCategory = () => {
              
              {
                     loading === false ? (
-                        category ? (
-                            category.slice(0, 5).map((item, index) => {
+                        category.data ? (
+                            category.data.slice(0, 5).map((item, index) => {
                                 return (<CategoryCard key={index} title={item.name} img={item.image} background={colors[index]} />)
                             })
                         ) : <h4>لا يوجد تصنيفات</h4>
-                    ) :  <Spinner animation="border" variant="secondary" />
+                    ) : <Spinner animation="border" variant="primary" />
 
                 }
 

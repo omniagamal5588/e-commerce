@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Col, Row, Spinner } from 'react-bootstrap'
-import AddCategoryHook from '../../hook/category/add-category-hook'
+import AddCategoryHook from '../../Hook/category/add-category-hook';
 import { ToastContainer, toast } from 'react-toastify';
 const AdminAddCategory = () => {
 

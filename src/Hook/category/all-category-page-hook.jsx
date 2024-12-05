@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { getAllCategory,getAllCategoryPage } from '../../redux/actions/categoryAction'
 
 const AllCategoryPageHook = () => {
-   const dispatch = useDispatch();
+    const dispatch = useDispatch();
     //when first load
     useEffect(() => {
         dispatch(getAllCategory(5));
@@ -17,11 +17,9 @@ const AllCategoryPageHook = () => {
     console.log(category)
 
     //to get page count
-    let pageCount = 5;
+    let pageCount = 0;
     if (category.paginationResult)
         pageCount = category.paginationResult.numberOfPages
-      console.log("category page count",category.paginationResult)
-      console.log("pageCount is = ",pageCount)
 
     //when press pagination
     const getPage = (page) => {

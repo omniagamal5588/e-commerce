@@ -16,7 +16,7 @@ const BrandFeatured = ({ title, btnTitle }) => {
                 {
                    loading === false ? (
                         brand ? (
-                            brand.slice(0, 5).map((item, index) => {
+                            brand.data.slice(0, 5).map((item, index) => {
                                 return (<BrandCard key={index}  img={item.image} />)
                             })
                         ) : <h4>لا يوجد تصنيفات</h4>

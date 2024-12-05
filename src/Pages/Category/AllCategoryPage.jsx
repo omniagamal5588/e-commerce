@@ -5,20 +5,18 @@ import AllCategoryPageHook from '../../Hook/category/all-category-page-hook'
 
 
 const AllCategoryPage = () => {
-  const [category,loading,pageCount,getPage] = AllCategoryPageHook();
-  console.log(pageCount)
- 
-  return (
-    <div style={{ minHeight: "680px" }}>
-    <CategoryContainer data={category} loading={loading} />
-    
+   const [category, loading, pageCount, getPage] = AllCategoryPageHook();
+
+    return (
+        <div style={{ minHeight: '670px' }}>
+
+            <CategoryContainer data={category.data} loading={loading} />
             {
-                pageCount > 1 ? (<Pagination pageCount={pageCount} onPress={getPage} />) :null
-                
+                pageCount > 1 ? (<Pagination pageCount={pageCount} onPress={getPage} />) : null
             }
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default AllCategoryPage
