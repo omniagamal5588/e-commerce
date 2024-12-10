@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllCategory } from '../../redux/actions/categoryAction'
-import notify from '../../Hook/useNotifcation'
+import notify from '../useNotifcation';
 import { creatsubcategory } from '../../redux/actions/subcategoryAction';
 
 const AddSubCategoryHook = () => {

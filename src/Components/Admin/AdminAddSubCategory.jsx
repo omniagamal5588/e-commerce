@@ -22,7 +22,6 @@ const AdminAddSubCategory = () => {
                         {      
                             category.data ?
                             (category.data.map(item => {
-                                console.log('Data of Category',category.data)
                                 return (<option key={item._id} value={item._id}>{item.name}</option>)
                             })) : null
                         }

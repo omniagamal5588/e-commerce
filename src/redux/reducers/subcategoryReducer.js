@@ -1,4 +1,4 @@
-import { CREATE_SUB_CATEGORY,GET_ERROR } from "../type"
+import { CREATE_SUB_CATEGORY,GET_ERROR, GET_SUB_CATEGORY } from "../type"
 
 const initialState={
     subcategory:[],
@@ -8,10 +8,16 @@ const subcategoryReducer = (state=initialState,action)=>{
     switch(action.type){
             case CREATE_SUB_CATEGORY:
             return {
+                  ...state,
                 subcategory: action.payload,
                 loading: false
             }
-        case GET_ERROR:
+            case GET_SUB_CATEGORY:
+            return {
+                subcategory: action.payload,
+                loading: false
+            }
+            case GET_ERROR:
             return {
                 loading: true,
                 subcategory: action.payload,
