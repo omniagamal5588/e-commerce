@@ -5,22 +5,36 @@ import SideFilter from '../../Components/utilities/SideFilter'
 import { Row,Col,Container } from 'react-bootstrap'
 import CardProductContainer from '../../Components/Products/CardProductContainer'
 import Pagination from '../../Components/utilities/Pagination'
+import ViewSearchProductHook from '../../Hook/product/view-search-product-hook'
 const ShopProductPage = () => {
+
+    const [searchProducts,pagination,onPress] = ViewSearchProductHook();
+    if(pagination){
+         var pageCount=pagination
+    }else{
+        pageCount=0
+    }
+    
+    
  return (
         <div style={{ minHeight: '670px' }}>
             <CategoryHeader />
             <Container>
-                <SearchCountResult title="400 نتجية بحث" />
+                <SearchCountResult  title={`هناك ${searchProducts.length} نتجة بحث`}/>
                 <Row className='d-flex flex-row'>
-                    <Col sm="10" xs="10" md="11">
-                         <CardProductContainer title="" btntitle=""/>
-                    </Col>
-                    <Col sm="2" xs="2" md="1" className='d-flex'>
+                      <Col sm="2" xs="2" md="1" className='d-flex'>
                         <SideFilter />
                     </Col>
-                  
+                    
+                    <Col sm="10" xs="10" md="11">
+                        <CardProductContainer products={searchProducts}  title="" btntitle="" />
+                    </Col>
                 </Row>
-                    <Pagination />
+                    {
+                        pageCount >1 ? ( <Pagination pageCount={pageCount} onPress={onPress} />):null
+                    
+                    }
+                
             </Container>
         </div>
     )

@@ -23,6 +23,7 @@ import UserAllAddresPage from './Pages/User/UserAllAddresPage'
 import UserEditAddressPage from './Pages/User/UserEditAddressPage'
 import UserProfilePage from './Pages/User/UserProfilePage'
 import UserAddAddressPage from './Pages/User/UserAddAddressPage'
+import AdminEditProductPage from './Pages/Admin/AdminEditProductPage'
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         <Route path='/allCategory' element={<AllCategoryPage/>}/>
         <Route path='/allBrand' element={<AllBrandPage/>}/>
         <Route path='/allproducts' element={<ShopProductPage/>}/>
-        <Route path='/product:id' element={<ProductDetailsPage/>}/>
+        <Route path='/product/:id' element={<ProductDetailsPage/>}/>
         <Route path='/cart' element={<CartPage/>}/>
         <Route path='/choosepay' element={<ChoosePayMethodPage/>}/>
         <Route path='/admin/allproducts' element={<AdminAllProductsPage/>}/>
@@ -51,7 +52,9 @@ function App() {
         <Route path='/user/addresses' element={<UserAllAddresPage/>}/>
         <Route path="/user/add-address" element={<UserAddAddressPage />} />
         <Route path="/user/edit-address" element={<UserEditAddressPage />} /> 
-        <Route path="/user/profile" element={<UserProfilePage />} /> 
+        <Route path="/user/profile" element={<UserProfilePage />} />
+        <Route path="/admin/editproduct/:id" element={<AdminEditProductPage />} />
+       
       </Routes>
       </BrowserRouter>
        <Footer/>

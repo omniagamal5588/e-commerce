@@ -15,9 +15,6 @@ const CardProductContainer = ({title ,btnTitle ,pathText,products}) => {
               products.map((item, index)=>  <ProductCard key={index} item= {item} />)
             ):null
           }
-       
-       
-       
         </Row>
     </Container>
   )

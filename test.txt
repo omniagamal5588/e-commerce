@@ -1,0 +1,63 @@
+// كود البشمهندس
+
+ //get create meesage
+    const product = useSelector(state => state.allproducts.updateProducts)
+
+    useEffect(() => {
+
+        if (loading === false) {
+            setCatID(0)
+            setColors([])
+            setImages([])
+            setProdName('')
+            setProdDescription('')
+            setPriceBefore('السعر قبل الخصم')
+            setPriceAftr('السعر بعد الخصم')
+            setQty('الكمية المتاحة')
+            SetBrandID(0)
+            setSeletedSubID([])
+            setTimeout(() => setLoading(true), 1500)
+
+            if (product) {
+                if (product.status === 200) {
+                    notify("تم التعديل بنجاح", "success")
+                } else {
+                    notify("هناك مشكله", "error")
+                }
+            }
+        }
+    }, [loading])
+
+    // الكود بتاعي
+//update product 
+    const product = useSelector((state)=>state.allproducts.updatedProducts)
+        useEffect(() => {
+        if (loading === false) {
+           // setCatID(0)
+            setColors([])
+            setImages([])
+            setProdName('')
+            setProdDesc('')
+            setPriceBefore('السعر قبل الخصم')
+            setPriceAfter('السعر بعد الخصم')
+            setQty('الكمية المتاحة')
+            setBrandId(0)
+            setSelectedSubId([])
+            setCatID('')
+            setTimeout(() => setLoading(true), 1500)
+
+            if (product) {
+                if (product.status === 201) {
+                    notify("تم الاضافة بنجاح", "success")
+                } else {
+                    notify("هناك مشكله", "error")
+                }
+            }
+        }
+    }, [loading])
+//crop image
+        const crop = {
+            unit: '%',
+            aspect: 4 / 3,
+            width: '100'
+        }
