@@ -8,19 +8,17 @@ import Pagination from '../../Components/utilities/Pagination'
 import ViewSearchProductHook from '../../Hook/product/view-search-product-hook'
 const ShopProductPage = () => {
 
-    const [searchProducts,pagination,onPress] = ViewSearchProductHook();
+    const [searchProducts,pagination,onPress,getProduct, results] = ViewSearchProductHook();
     if(pagination){
          var pageCount=pagination
     }else{
         pageCount=0
     }
-    
-    
  return (
         <div style={{ minHeight: '670px' }}>
             <CategoryHeader />
             <Container>
-                <SearchCountResult  title={`هناك ${searchProducts.length} نتجة بحث`}/>
+                <SearchCountResult onClick={getProduct}  title={`هناك ${results} نتجة بحث`}/>
                 <Row className='d-flex flex-row'>
                       <Col sm="2" xs="2" md="1" className='d-flex'>
                         <SideFilter />

@@ -10,7 +10,6 @@ const ViewProductDetailsHook = (id) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getOneProduct(id))
-       
     }, [id])
 
     const oneProduct = useSelector((state) => state.allproducts.oneProduct)

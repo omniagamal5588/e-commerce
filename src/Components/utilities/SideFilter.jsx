@@ -1,7 +1,11 @@
 import React from 'react'
 import { Row } from 'react-bootstrap'
+import AsideBarSearchHook from '../../Hook/search/asidebar-search-hook'
 
 const SideFilter = () => {
+  const [category,brand ,clickCategory, clickBrand, priceFrom,priceTo] = AsideBarSearchHook();
+    let localFrom = localStorage.getItem("priceFrom")
+    let localTo = localStorage.getItem("priceTo")
   return (
         <div className="mt-3">
         <Row>
@@ -11,22 +15,16 @@ const SideFilter = () => {
               <input type="checkbox" value="" />
               <div className="filter-sub me-2 ">الكل</div>
             </div>
-            <div className="d-flex mt-2">
-              <input type="checkbox" value="" />
-              <div className="filter-sub me-2 ">اجهزة منزلية</div>
-            </div>
-            <div className="d-flex mt-2">
-              <input type="checkbox" value="" />
-              <div className="filter-sub me-2 ">اجهزة منزلية</div>
-            </div>
-            <div className="d-flex mt-2">
-              <input type="checkbox" value="" />
-              <div className="filter-sub me-2 ">اجهزة منزلية</div>
-            </div>
-            <div className="d-flex mt-2">
-              <input type="checkbox" value="" />
-              <div className="filter-sub me-2 ">اجهزة منزلية</div>
-            </div>
+           {
+            category?(
+              category.map((item,index) =>{
+                return(
+                   <div key={index} className="d-flex mt-3">
+              <input  onChange={clickCategory} type="checkbox" value={item._id} />
+              <div className="filter-sub me-2 ">{item.name}</div>
+            </div>)
+              })):null
+           }
           </div>
   
           <div className="d-flex flex-column mt-2">
@@ -35,14 +33,18 @@ const SideFilter = () => {
               <input type="checkbox" value="" />
               <div className="filter-sub me-2 ">الكل</div>
             </div>
-            <div className="d-flex mt-2">
-              <input type="checkbox" value="" />
-              <div className="filter-sub me-2 ">ابل</div>
+            {
+              brand?(
+                brand.map((item,index)=>{
+                  return(
+                     <div  key={index} className="d-flex mt-3">
+              <input onChange={clickBrand} type="checkbox" value={item._id} />
+              <div className="filter-sub me-2 ">{item.name}</div>
             </div>
-            <div className="d-flex mt-2">
-              <input type="checkbox" value="" />
-              <div className="filter-sub me-2 ">سامسونج</div>
-            </div>
+                  )
+                })
+              ):null
+            }
           </div>
   
           <div className="filter-title my-3">السعر</div>
@@ -51,7 +53,9 @@ const SideFilter = () => {
             <input
               className="m-2 text-center"
               type="number"
-              style={{ width: "50px", height: "25px" }}
+                value={localFrom}
+              onChange={priceFrom}
+              style={{ width: "80px", height: "25px" }}
             />
           </div>
           <div className="d-flex">
@@ -59,7 +63,9 @@ const SideFilter = () => {
             <input
               className="m-2 text-center"
               type="number"
-              style={{ width: "50px", height: "25px" }}
+              value={localTo}
+              onChange={priceTo}
+              style={{ width: "80px", height: "25px" }}
             />
           </div>
         </Row>

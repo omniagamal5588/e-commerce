@@ -20,7 +20,7 @@ const ProductCard = ({ item }) => {
                     boxShadow: "0 2px 2px 0 rgba(151,151,151,0.5)",
                 }}>
                 <Link to={`/product/${item._id}`} style={{ textDecoration: 'none' }}>
-                    <Card.Img style={{ height: "228px", width: "100%" }} src={item.imageCover} onClick={() => window.location.reload()} />
+                    <Card.Img style={{ height: "228px", width: "100%" }} src={item.imageCover} />
                 </Link>
                 <div className="d-flex justify-content-end mx-2">
                     <img
