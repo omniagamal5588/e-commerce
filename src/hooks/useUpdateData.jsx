@@ -1,16 +1,21 @@
-import baseUrl from "../Api/baseURL";
+import baseUrl from '../Api/baseURL'
 
-const useUpdatetDataWithImage= async(url,params)=>{
-    const config={
-      header:{"Content-Type":"multipart/form-data"}
+
+const useUpdatetDataWithImage = async (url, parmas) => {
+    const config = {
+        headers: { "Content-Type": "multipart/form-data", Authorization: `Bearer ${localStorage.getItem("token")}` }
     }
-    const res= await baseUrl.put(url,params,config)
-    return res
+    const res = await baseUrl.put(url, parmas, config);
+    console.log(res.status)
+    return res;
 }
 
-const useUpdateData= async(url,params)=>{
-    const res= await baseUrl.put(url,params)
-    return res
+const useInsUpdateData = async (url, parmas) => {
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    }
+    const res = await baseUrl.put(url, parmas, config);
+    return res;
 }
 
-export {useUpdatetDataWithImage,useUpdateData}
+export { useUpdatetDataWithImage, useInsUpdateData };

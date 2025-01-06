@@ -1,5 +1,5 @@
 import { CREATE_CATEGORY, GET_ALL_CATEGORY,GET_ERROR , GET_ONE_CATEGORY } from "../type";
-import  useGetData from "../../hooks/useGetData";
+import { useGetData} from "../../hooks/useGetData";
 import { useInsertDataWithImage } from "../../hooks/useInsertData";
 
 export const getAllCategory=(limit)=>async (dispatch)=>{
