@@ -1,4 +1,4 @@
-import { useInsertDataWithImage } from "../../hooks/useInsertData"
+import { useInsertDataWithImage} from "../../hooks/useInsertData"
 import { GET_ERROR , CREATE_PRODUCT ,GET_ALL_PRODUCT, GET_PRODUCT_DETAILS ,GET_PRODUCTS_LIKE ,DELETE_PRODUCT, UPDATE_PRODUCT} from "../type"
 import {useGetData} from "../../hooks/useGetData"
 import useDeleteData from "../../hooks/useDeleteData"
@@ -81,22 +81,23 @@ export const getAllProductSearch =(queryString)=> async (dispatch)=>{
 
 
 // get one product  detailsaction
-export const getOneProduct = (id)=> async(dispatch)=>{
-    try{
-        const response = await useGetData(`/api/v1/products/${id}`)
+//get one product with id
+export const getOneProduct = (id) => async (dispatch) => {
+    try {
+        const response = await useGetData(`/api/v1/products/${id}`);
+        console.log("response of product," ,response)
         dispatch({
-            type:GET_PRODUCT_DETAILS,
-            payload:response,
-            loading:true
+            type: GET_PRODUCT_DETAILS,
+            payload: response,
+            loading: true
         })
-    }catch(e){
+
+    } catch (e) {
         dispatch({
-            type:GET_ERROR,
-            payload:e,
-            loading:false
+            type: GET_ERROR,
+            payload: "Error " + e,
         })
     }
-
 }
 
 

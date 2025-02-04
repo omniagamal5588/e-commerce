@@ -5,8 +5,7 @@ import mobile from '../../images/mobile.png'
 import { getOneCategory } from '../../redux/actions/categoryAction'
 import { getOneBrand } from '../../redux/actions/brandAction'
 
-const ViewProductDetailsHook = (id) => {
-    
+const ViewProductDetailsHook =  (id) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getOneProduct(id))

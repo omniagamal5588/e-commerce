@@ -39,13 +39,13 @@ const loginUserHook = () => {
     //     return;
     //  }
  }
-    const response = useSelector(state=> state.authReducer.loginUserList)
-    //console.log('response' ,response.data)
+    
  
 
 
  const onSubmit = async()=>{
      validationOfLogin();
+      setIsPress(true)
      setLoading(true)
      await dispatch(loginUser({
              email,
@@ -54,6 +54,8 @@ const loginUserHook = () => {
     setLoading(false)
     setIsPress(false)
   }
+  const response = useSelector(state=> state.authReducer.loginUserList)
+    
 
 useEffect(()=>{
     if(loading === false){
