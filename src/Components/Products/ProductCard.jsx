@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react';
 import { Card, Col } from 'react-bootstrap'
-import prod1 from "../../images/prod1.png";
-import favoff from "../../images/fav-off.png";
+
 import rate from "../../images/rate.png";
 import { Link } from 'react-router-dom';
-const ProductCard = ({ item }) => {
-   
+import ProductCardHook from '../../Hook/product/product-card-hook';
+import {ToastContainer} from 'react-bootstrap';
+
+const ProductCard = ({ item,favProd }) => {
+   const [removeToWishListData, addToWishListData, handelFav, favImg] = ProductCardHook(item, favProd)
     return (
         <Col xs="6" sm="6" md="4" lg="3" className="d-flex">
 
@@ -24,12 +27,14 @@ const ProductCard = ({ item }) => {
                 </Link>
                 <div className="d-flex justify-content-end mx-2">
                     <img
-                        src={favoff}
+                      onClick={handelFav}
+                        src={favImg}
                         alt=""
                         className="text-center"
                         style={{
                             height: "24px",
                             width: "26px",
+                            cursor:"Pointer",
                         }}
                     />
                 </div>
@@ -59,7 +64,9 @@ const ProductCard = ({ item }) => {
                     </Card.Text>
                 </Card.Body>
             </Card>
+            <ToastContainer/>
         </Col>
+        
     )
 }
 

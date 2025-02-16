@@ -3,6 +3,7 @@ import UserAsideBar from '../../Components/User/UserAsideBar'
 import UserFavoriteProduct from '../../Components/User/UserFavoriteProduct'
 import { Row,Col,Container } from 'react-bootstrap'
 
+
 const UserFavoriteProductsPage = () => {
    return (
         <Container >
