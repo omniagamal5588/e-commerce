@@ -45,3 +45,12 @@ export const ADD_FAV_PRODUCT ="ADD_FAV_PRODUCT"
 export const REMOVE_FAV_PRODUCT ="REMOVE_FAV_PRODUCT"
 export const USER_WISHLIST = "USER_WISHLIST"
 
+
+// CouponType
+export const CREATE_COUPON = "CREATE_COUPON"
+export const GET_ALL_COUPONS ="GET_ALL_COUPONS"
+export const DELETE_COUPON ="DELETE_COUPON"
+export const GET_ONE_COUPON ="GET_ONE_COUPON"
+export const EDIT_COUPON = "EDIT_COUPON"
+
+

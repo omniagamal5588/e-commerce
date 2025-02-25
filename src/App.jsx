@@ -27,6 +27,9 @@ import AdminEditProductPage from './Pages/Admin/AdminEditProductPage'
 import ForgetPasswordPage from './Pages/Auth/ForgetPasswordPage'
 import VerifyPasswordPage from './Pages/Auth/VerifyPasswordPage'
 import ResetPasswordPage from './Pages/Auth/ResetPasswordPage'
+import AdminAddCoupon from './Components/Admin/AdminAddCoupon'
+import AdminAddCouponPage from './Pages/Admin/AdminAddCouponPage'
+import AdminEditCouponPage from './Pages/Admin/AdminEditCouponPage'
 
 function App() {
   return (
@@ -60,6 +63,8 @@ function App() {
         <Route path="/user/forget-password" element={<ForgetPasswordPage/>}/>
         <Route path="/user/verify-code" element={<VerifyPasswordPage/>}/>
         <Route path="/user/reset-password" element={<ResetPasswordPage/>}/>
+         <Route path="/admin/addCoupon" element={<AdminAddCouponPage/>}/>
+         <Route path='/admin/editCoupon/:id' element={<AdminEditCouponPage/>}/>
       </Routes>
       </BrowserRouter>
        <Footer/>

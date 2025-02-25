@@ -6,6 +6,7 @@ import productReducer from "./productReducer";
 import authReducer from './authReducer'
 import reviewReducer from './reviewReducer'
 import { wishListReducer } from "./wishListReducer";
+import { couponReducer } from "./couponReducer";
 
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
     authReducer: authReducer,
     reviewReducer: reviewReducer,
     wishListReducer:wishListReducer,
+    couponReducer:couponReducer,
 }
 )
