@@ -1,5 +1,6 @@
-import { CREATE_NEW_USER,LOGIN_USER,FOREGT_PASSWORD,VERIFY_PASSWORD , RESET_PASSWORD,GET_CURERNT_USER } from '../type'
+import { CREATE_NEW_USER,LOGIN_USER,FOREGT_PASSWORD,VERIFY_PASSWORD , RESET_PASSWORD,GET_CURERNT_USER,UPDATE_USER_PROFILE,UPDATE_USER_PASSWORD } from '../type'
 import { useInsertData } from '../../hooks/useInsertData'
+import {useUpdateData} from '../../hooks/useUpdateData'
 
 //create new user 
 export const createNewUser = (data) => async (dispatch) => {
@@ -97,7 +98,7 @@ export const verifyPassword = (data) => async (dispatch) => {
 //2-reset  passwrod 
 export const resetPassword = (data) => async (dispatch) => {
     try {
-        const response = await useInsUpdateData(`/api/v1/auth/resetPassword`, data);
+        const response = await useUpdateData(`/api/v1/auth/resetPassword`, data);
         dispatch({
             type: RESET_PASSWORD,
             payload: response,
@@ -107,6 +108,43 @@ export const resetPassword = (data) => async (dispatch) => {
     } catch (e) {
         dispatch({
             type: RESET_PASSWORD,
+            payload: e.response,
+        })
+    }
+}
+//update user profile
+export const updateUserProfileData = (body) => async (dispatch) => {
+    try {
+        const response = await useUpdateData(`/api/v1/users/updateMe`, body);
+        console.log('response',response)
+        dispatch({
+            type: UPDATE_USER_PROFILE,
+            payload: response,
+            loading: true
+        })
+
+    } catch (e) {
+        dispatch({
+            type: UPDATE_USER_PROFILE,
+            payload: e.response,
+        })
+    }
+}
+
+// update user password
+ export const updateUserPassword = (body) => async (dispatch) => {
+    try {
+        const response = await useUpdateData(`/api/v1/users/changeMyPassword`, body);
+        console.log(response)
+        dispatch({
+            type:UPDATE_USER_PASSWORD,
+            payload: response,
+            loading: true
+        })
+
+    } catch (e) {
+        dispatch({
+            type: UPDATE_USER_PASSWORD,
             payload: e.response,
         })
     }

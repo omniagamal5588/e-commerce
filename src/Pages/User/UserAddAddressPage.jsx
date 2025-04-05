@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container,Row,Col } from 'react-bootstrap'
 import UserAsideBar from '../../Components/User/UserAsideBar'
+import UserAddAddress from '../../Components/User/UserAddAddress'
 
 const UserAddAddressPage = () => {
   return (

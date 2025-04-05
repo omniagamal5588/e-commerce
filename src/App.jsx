@@ -65,6 +65,7 @@ function App() {
         <Route path="/user/reset-password" element={<ResetPasswordPage/>}/>
          <Route path="/admin/addCoupon" element={<AdminAddCouponPage/>}/>
          <Route path='/admin/editCoupon/:id' element={<AdminEditCouponPage/>}/>
+          <Route path="/user/edit-address/:id" element={<UserEditAddressPage />} />
       </Routes>
       </BrowserRouter>
        <Footer/>

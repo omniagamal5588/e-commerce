@@ -1,5 +1,5 @@
 
-import { CREATE_NEW_USER,LOGIN_USER,FOREGT_PASSWORD,VERIFY_PASSWORD,RESET_PASSWORD,GET_CURERNT_USER} from '../type'
+import { CREATE_NEW_USER,LOGIN_USER,FOREGT_PASSWORD,VERIFY_PASSWORD,RESET_PASSWORD,GET_CURERNT_USER ,UPDATE_USER_PROFILE,UPDATE_USER_PASSWORD} from '../type'
 
 const inital = {
     createUser: [],
@@ -9,6 +9,8 @@ const inital = {
     verifyPassword:[],
     resetPassword: [],
     currentUser: [],
+    userProfile: [],
+    userChangePassword: [],
 }
 const authReducer = (state = inital, action) => {
     switch (action.type) {
@@ -41,7 +43,17 @@ const authReducer = (state = inital, action) => {
             return {
                 ...state,
                 resetPassword: action.payload,
-            }  
+            }
+        case UPDATE_USER_PROFILE:
+            return {
+                ...state,
+                userProfile: action.payload,
+            }
+        case UPDATE_USER_PASSWORD:
+            return {
+                ...state,
+                userChangePassword: action.payload,
+            }      
         default:
             return state;
     }
